@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <string>
+#include <algorithm>
 
 #define VARNAME(VAR) (#VAR)
 
@@ -22,13 +23,13 @@ std::string getStringFromUser()
 void printFunc(const std::string& str)
 {
 	std::cout << "'"
-			  << str
-			  << "'"
-			  << std::endl;
+              << str
+              << "'"
+              << std::endl;
 }
 
 void test(const std::string& input, const std::string& check, 
-		  const std::string testName = "", bool verbose = false)
+          const std::string testName = "", const bool verbose = false)
 {
 	std::cout << std::endl;
 	std::cout << (testName.size() > 0 ? testName + ": " : "");
@@ -44,22 +45,16 @@ void test(const std::string& input, const std::string& check,
 	if(verbose)
 	{
 		std::cout << "\t"
-				  << "'" + input + "'"
-				  << " == "
-				  << "'" + check + "'"
-				  << std::endl;
+                  << "'" + input + "'"
+                  << " == "
+                  << "'" + check + "'"
+                  << std::endl;
 	}
 }
 
 void removeSpaces(std::string& str)
 {
-	for(auto c = str.end(); c >= str.begin();--c)
-	{
-		if (*c == c_space)
-		{
-			str.erase(c);
-		}
-	}
+	str.erase(std::remove(str.begin(), str.end(), c_space), str.end());
 }
 
 void setPriorityBrackets(std::string& str)
