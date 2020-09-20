@@ -13,8 +13,8 @@ public:
 
 	void run();
 
-	Application(const Application& app) = delete;
-	Application& operator=(const Application& app) = delete;
+	Application(const Application&) = delete;
+	Application& operator=(const Application&) = delete;
 
 private:
 	std::string getStringFromUser();

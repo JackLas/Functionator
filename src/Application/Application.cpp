@@ -20,7 +20,12 @@ void Application::run()
 
 	Functionator* func = new Functionator(funcStr);
 
-	std::cout << func->getString() << std::endl;
+	std::cout << func->getString() 
+              << " = "
+              << func->calculate()
+              << std::endl;
+
+    delete func;
 }
 
 std::string Application::getStringFromUser()

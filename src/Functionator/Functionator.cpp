@@ -1,30 +1,38 @@
 #include "Functionator.hpp"
 
-#include <algorithm>
+#include "Nodes/IFuncNode.hpp"
+#include "Parser/FunctionParser.hpp"
 
 Functionator::Functionator(const std::string& str)
+: mFuncStr(str)
+, mFuncTree(nullptr)
 {
-	mFuncStr = str;
-	removeSpaces(mFuncStr);
+	FunctionParser::removeSpaces(mFuncStr);
 }
 	
 Functionator::~Functionator()
 {
-
+	delete mFuncTree;
 }
 
-void Functionator::analyse()
+double Functionator::calculate()
 {
+	double result = 0.0f;
+	
+	if (!mFuncTree)
+	{
+		mFuncTree = parser.getTree();
+	}
 
+	if (mFuncTree)
+	{
+		result = mFuncTree->getResult();
+	}
+
+	return result;
 }
 
 const std::string& Functionator::getString() const
 {
 	return mFuncStr;
-}
-
-void Functionator::removeSpaces(std::string& str)
-{
-	const char space = ' ';
-	str.erase(std::remove(str.begin(), str.end(), space), str.end());
 }
