@@ -1,3 +1,17 @@
+#include "Application.hpp"
+#include "Functionator.hpp"
+
+Application::Application()
+{
+
+}
+
+Application::~Application()
+{
+
+}
+
+//--- poc ---
 #include <iostream> 
 #include <string>
 #include <algorithm>
@@ -65,7 +79,7 @@ void setPriorityBrackets(std::string& str)
 	}
 }
 
-int main(int argc, char** argv)
+void run()
 {
 	//std::string funcStr = getStringFromUser();
 	std::string funcStr = test_start;
@@ -75,6 +89,11 @@ int main(int argc, char** argv)
 
 	setPriorityBrackets(funcStr);
 	test(funcStr, test_prio, VARNAME(test_prio), true);
-
-	return 0;
 }
+//--- poc ---
+
+void Application::start()
+{
+	run();
+}
+
