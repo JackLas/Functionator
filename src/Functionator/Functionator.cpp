@@ -1,10 +1,11 @@
 #include "Functionator.hpp"
 
-#include <iostream>
+#include <algorithm>
 
-Functionator::Functionator()
+Functionator::Functionator(const std::string& str)
 {
-
+	mFuncStr = str;
+	removeSpaces(mFuncStr);
 }
 	
 Functionator::~Functionator()
@@ -12,7 +13,18 @@ Functionator::~Functionator()
 
 }
 
-void Functionator::calc()
+void Functionator::analyse()
 {
-	std::cout << __PRETTY_FUNCTION__ << std::endl;
+
+}
+
+const std::string& Functionator::getString() const
+{
+	return mFuncStr;
+}
+
+void Functionator::removeSpaces(std::string& str)
+{
+	const char space = ' ';
+	str.erase(std::remove(str.begin(), str.end(), space), str.end());
 }

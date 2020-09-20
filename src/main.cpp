@@ -3,7 +3,7 @@
 int main(int argc, char** argv)
 {
 	Application* app = new Application();
-	app->start();
+	app->run();
 	delete app;
 	return 0;
 }
