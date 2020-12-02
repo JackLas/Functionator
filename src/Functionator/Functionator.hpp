@@ -1,28 +1,21 @@
-#ifndef FUNCTIONATOR_H
-#define FUNCTIONATOR_H
+#ifndef __FUNCTIONATOR_H__
+#define __FUNCTIONATOR_H__
 
 #include <string>
 
-//forward declaration
-class IFuncNode;
-class FunctionParser;
-
 class Functionator
 {
-private:
-	FunctionParser parser;
-
-	std::string mFuncStr;
-	IFuncNode* mFuncTree;
 public:
-	Functionator(const std::string& str);
+	Functionator();
 	~Functionator();
 
-	double calculate();
-	const std::string& getString() const;
+	std::string str();
 
+protected:
 	Functionator(const Functionator&) = delete;
+	Functionator(const Functionator&&) = delete;
 	Functionator& operator=(const Functionator&) = delete;
+	Functionator& operator=(const Functionator&&) = delete;
 };
 
-#endif //FUNCTIONATOR_H
+#endif //__FUNCTIONATOR_H__

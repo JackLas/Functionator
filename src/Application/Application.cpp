@@ -15,17 +15,8 @@ Application::~Application()
 
 void Application::run()
 {
-	//std::string funcStr = getStringFromUser();
-	std::string funcStr = "1+2";
-
-	Functionator* func = new Functionator(funcStr);
-
-	std::cout << func->getString() 
-              << " = "
-              << func->calculate()
-              << std::endl;
-
-    delete func;
+	Functionator func;
+	std::cout << func.str() << std::endl;
 }
 
 std::string Application::getStringFromUser()

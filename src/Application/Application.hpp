@@ -1,23 +1,24 @@
-#ifndef APPLICATION_H
-#define APPLICATION_H
+#ifndef __APPLICATION_H__
+#define __APPLICATION_H__
 
 #include <string>
 
 class Application
 {
-private:
-
 public:
 	Application();
 	~Application();
 
 	void run();
 
+protected:
 	Application(const Application&) = delete;
+	Application(const Application&&) = delete;
 	Application& operator=(const Application&) = delete;
+	Application& operator=(const Application&&) = delete;
 
 private:
 	std::string getStringFromUser();
 };
 
-#endif //APPLICATION_H
+#endif //__APPLICATION_H__
