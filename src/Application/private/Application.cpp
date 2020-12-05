@@ -2,24 +2,22 @@
 #include "Functionator.hpp"
 
 #include <iostream> 
+#include <string>
 
 Application::Application()
 {
-
 }
 
 Application::~Application()
 {
-
 }
 
 void Application::run()
 {
-	Functionator func;
-	std::cout << func.str() << std::endl;
+	std::cout << "Application::run()" << std::endl;
 }
 
-std::string Application::getStringFromUser()
+std::string getStringFromUser()
 {
 	std::cout << "Please enter your function:" << std::endl;
 	std::string result;
