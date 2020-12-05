@@ -8,4 +8,8 @@ add_library(${FUNCLIB_NAME} SHARED ${FUNC_SRC})
 
 target_include_directories(${FUNCLIB_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
+get_target_property(TEST ${FUNCLIB_NAME} INCLUDE_DIRECTORIES)
+
+message(STATUS "${TEST}")
+
 set(FUNCLIB_NAME ${FUNCLIB_NAME} PARENT_SCOPE)
