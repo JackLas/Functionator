@@ -37,7 +37,7 @@ SyntaxBaseNode& SyntaxBaseNode::operator=(const SyntaxBaseNode&& rhs)
     return *this;
 }
 
-std::string SyntaxBaseNode::getValue()
+std::string SyntaxBaseNode::getValue() const
 {
     return mValue;
 }

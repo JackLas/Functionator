@@ -1,7 +1,10 @@
 #include "UnaryOperationNode.hpp"
+#include "ValueNode.hpp"
 
-UnaryOperationNode::UnaryOperationNode(const std::string& operation)
+UnaryOperationNode::UnaryOperationNode(const std::string& operation,
+    const std::shared_ptr<SyntaxBaseNode>& operand)
 : SyntaxBaseNode(operation)
+, mOperand(operand)
 {
 }
 
@@ -17,13 +20,8 @@ UnaryOperationNode::UnaryOperationNode(const UnaryOperationNode&& other)
 {
 }
 
-UnaryOperationNode::UnaryOperationNode(const SyntaxBaseNode& other)
-: SyntaxBaseNode(other)
-{
-}
-
-UnaryOperationNode::UnaryOperationNode(const SyntaxBaseNode&& other)
-: SyntaxBaseNode(other)
+UnaryOperationNode::UnaryOperationNode(const ValueNode& other)
+: SyntaxBaseNode(other.getValue())
 {
 }
 
@@ -31,7 +29,12 @@ UnaryOperationNode::~UnaryOperationNode()
 {
 }
 
-void UnaryOperationNode::setOperand(std::shared_ptr<SyntaxBaseNode> node)
+void UnaryOperationNode::setOperand(const std::shared_ptr<SyntaxBaseNode>& node)
 {
     mOperand = node;
+}
+
+std::shared_ptr<SyntaxBaseNode> UnaryOperationNode::getOperand() const
+{
+    return mOperand;
 }

@@ -13,8 +13,7 @@ public:
     virtual SyntaxBaseNode& operator=(const SyntaxBaseNode& rhs);
     virtual SyntaxBaseNode& operator=(const SyntaxBaseNode&& rhs);
 
-
-    virtual std::string getValue();
+    virtual std::string getValue() const;
 
 protected:
     std::string mValue;
