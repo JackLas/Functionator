@@ -1,23 +1,15 @@
-#ifndef APPLICATION_H
-#define APPLICATION_H
+#ifndef __APPLICATION_H__
+#define __APPLICATION_H__
 
-#include <string>
+#include "IApplication.hpp"
 
-class Application
+class Application : public IApplication
 {
-private:
-
 public:
 	Application();
 	~Application();
 
-	void run();
-
-	Application(const Application&) = delete;
-	Application& operator=(const Application&) = delete;
-
-private:
-	std::string getStringFromUser();
+	void run() override;
 };
 
-#endif //APPLICATION_H
+#endif //__APPLICATION_H__
