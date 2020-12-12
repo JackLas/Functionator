@@ -15,7 +15,6 @@ private:
 	std::unique_ptr<Impl> mImpl;
 
 protected:
-
 	Functionator(const Functionator&) = delete;
 	Functionator(const Functionator&&) = delete;
 	Functionator& operator=(const Functionator&) = delete;

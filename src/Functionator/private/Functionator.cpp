@@ -4,7 +4,7 @@
 class Functionator::Impl
 {
 public:
-	std::unique_ptr<ISyntaxNode> mExpressionTree;
+	std::shared_ptr<SyntaxBaseNode> mExpressionTree;
 
 	Impl()
 	: mExpressionTree(nullptr)

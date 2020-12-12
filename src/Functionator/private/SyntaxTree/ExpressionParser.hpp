@@ -1,7 +1,7 @@
 #ifndef __EXPRESSIONPARSER_HPP__
 #define __EXPRESSIONPARSER_HPP__
 
-#include "Nodes/ISyntaxNode.hpp"
+#include "Nodes/SyntaxBaseNode.hpp"
 
 #include <string>
 #include <memory>
@@ -12,7 +12,7 @@ public:
     ExpressionParser(const std::string& expression);
     ~ExpressionParser() = default;
 
-    std::unique_ptr<ISyntaxNode> getTree();
+    std::shared_ptr<SyntaxBaseNode> getTree();
 
 protected:
     std::string mExpression;

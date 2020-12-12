@@ -5,7 +5,7 @@ ExpressionParser::ExpressionParser(const std::string& expression)
 {
 }
 
-std::unique_ptr<ISyntaxNode> ExpressionParser::getTree()
+std::shared_ptr<SyntaxBaseNode> ExpressionParser::getTree()
 {   
-    return std::unique_ptr<ISyntaxNode>(nullptr);
+    return std::unique_ptr<SyntaxBaseNode>(nullptr);
 }
