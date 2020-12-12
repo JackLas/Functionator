@@ -7,9 +7,9 @@ class ValueNode : public SyntaxBaseNode
 {
 public:
     ValueNode(const std::string& value);
-    ValueNode(const ValueNode& otherNode);
-    ValueNode(const ValueNode&& otherNode);
-    ~ValueNode();
+    ValueNode(const ValueNode& other);
+    ValueNode(const ValueNode&& other);
+    virtual ~ValueNode();
 };
 
 #endif //__VALUENODE_HPP__

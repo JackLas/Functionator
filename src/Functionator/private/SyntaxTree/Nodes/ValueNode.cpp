@@ -5,13 +5,13 @@ ValueNode::ValueNode(const std::string& value)
 {
 }
 
-ValueNode::ValueNode(const ValueNode& otherNode)
-: SyntaxBaseNode(otherNode)
+ValueNode::ValueNode(const ValueNode& other)
+: SyntaxBaseNode(other)
 {
 }
 
-ValueNode::ValueNode(const ValueNode&& otherNode)
-: SyntaxBaseNode(otherNode)
+ValueNode::ValueNode(const ValueNode&& other)
+: SyntaxBaseNode(other)
 {
 }
 
