@@ -24,3 +24,10 @@ Functionator::Functionator(const std::string& expression)
 Functionator::~Functionator()
 {
 }
+
+double Functionator::getResult() const
+{
+	//create visitor
+	//mImpl->mExpressionTree->accept(visitor)
+	return 0.0; //visitor->getResult();
+}

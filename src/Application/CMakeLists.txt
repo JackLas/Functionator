@@ -5,6 +5,7 @@ set(APPLIB_NAME app)
 file(GLOB_RECURSE APP_SRC "*.cpp")
 
 add_library(${APPLIB_NAME} STATIC ${APP_SRC})
+target_link_libraries(${APPLIB_NAME} ${FUNCLIB_NAME})
 
 target_include_directories(${APPLIB_NAME} 
     PRIVATE ${CMAKE_CURRENT_LIST_DIR}

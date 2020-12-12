@@ -10,6 +10,8 @@ public:
 	Functionator(const std::string& expression);
 	~Functionator();
 
+	double getResult() const;
+
 private:
 	class Impl;
 	std::unique_ptr<Impl> mImpl;
